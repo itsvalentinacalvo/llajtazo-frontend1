@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "Llajtazo",
+    "slug": "llajtazo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/core/assets/icon.png",
+    "scheme": "llajtazo",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.llajtazo.app"
+    },
+    "android": {
+      "package": "com.llajtazo.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#2BBBFF",
+        "foregroundImage": "./src/core/assets/icon.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./src/core/assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./src/core/assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#2BBBFF"
+        }
+      ],
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "reactCompiler": true
+    }
+  }
+}

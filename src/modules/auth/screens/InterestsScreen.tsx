@@ -43,22 +43,7 @@ const interests: Interest[] = [
   { id: "voluntariado", label: "Voluntariado" },
 ];
 
-const initialSelected = [
-  "teatro",
-  "conciertos",
-  "comedia",
-  "ferias",
-  "gastronomia",
-  "deportes",
-  "meditacion",
-  "talleres",
-  "conferencias",
-  "familiar",
-  "tecnologia",
-  "comida-tipica",
-  "voluntariado",
-  "yoga",
-];
+const initialSelected = [];
 
 export default function InterestsScreen({ navigation }: any) {
   const { theme } = useTheme();

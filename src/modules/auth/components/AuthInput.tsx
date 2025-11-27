@@ -40,6 +40,7 @@ export default function AuthInput({
         <Pressable
           onPress={() => setIsPasswordVisible(!isPasswordVisible)}
           style={styles.eyeIcon}
+          testID="password-eye-icon"
         >
           <Feather
             name={isPasswordVisible ? "eye" : "eye-off"}

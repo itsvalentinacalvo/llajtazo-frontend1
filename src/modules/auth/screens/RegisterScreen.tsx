@@ -23,36 +23,8 @@ export default function RegisterScreen() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fullNameError, setFullNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
 
   const handleRegister = () => {
-    let hasError = false;
-
-    if (!fullName.trim()) {
-      setFullNameError("Completa la información para continuar");
-      hasError = true;
-    } else {
-      setFullNameError("");
-    }
-
-    if (!email.trim()) {
-      setEmailError("Completa la información para continuar");
-      hasError = true;
-    } else {
-      setEmailError("");
-    }
-
-    if (!password.trim()) {
-      setPasswordError("Completa la información para continuar");
-      hasError = true;
-    } else {
-      setPasswordError("");
-    }
-
-    if (hasError) return;
-
     navigation.navigate("Verification");
   };
 
@@ -100,9 +72,6 @@ export default function RegisterScreen() {
               value={fullName}
               onChangeText={setFullName}
             />
-            {fullNameError ? (
-              <Text style={styles.errorText}>{fullNameError}</Text>
-            ) : null}
             <AuthInput
               icon="mail"
               placeholder="abc@email.com"
@@ -110,9 +79,6 @@ export default function RegisterScreen() {
               onChangeText={setEmail}
               keyboardType="email-address"
             />
-            {emailError ? (
-              <Text style={styles.errorText}>{emailError}</Text>
-            ) : null}
             <AuthInput
               icon="lock"
               placeholder="Contraseña"
@@ -120,9 +86,6 @@ export default function RegisterScreen() {
               onChangeText={setPassword}
               secureTextEntry
             />
-            {passwordError ? (
-              <Text style={styles.errorText}>{passwordError}</Text>
-            ) : null}
 
             <PrimaryButton
               title="REGÍSTRATE"
@@ -181,13 +144,6 @@ const styles = StyleSheet.create({
   },
   inputsContainer: {
     marginTop: Spacing.lg,
-    // alineamos a la izquierda para que el error quede pegado al input
-  },
-  errorText: {
-    alignSelf: "flex-start",
-    marginTop: 4,
-    marginLeft: 4,
-    color: "#FF3B30",
-    fontSize: 12,
+    alignItems: "center",
   },
 });

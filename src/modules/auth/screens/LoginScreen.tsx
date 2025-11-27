@@ -23,28 +23,8 @@ export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
 
   const handleLogin = () => {
-    let hasError = false;
-
-    if (!email.trim()) {
-      setEmailError("Este campo es obligatorio");
-      hasError = true;
-    } else {
-      setEmailError("");
-    }
-
-    if (!password.trim()) {
-      setPasswordError("Este campo es obligatorio");
-      hasError = true;
-    } else {
-      setPasswordError("");
-    }
-
-    if (hasError) return;
-
     console.log("Log in pressed");
   };
 
@@ -97,9 +77,6 @@ export default function LoginScreen() {
               onChangeText={setEmail}
               keyboardType="email-address"
             />
-            {emailError ? (
-              <Text style={styles.errorText}>{emailError}</Text>
-            ) : null}
             <AuthInput
               icon="lock"
               placeholder="Contraseña"
@@ -107,9 +84,6 @@ export default function LoginScreen() {
               onChangeText={setPassword}
               secureTextEntry
             />
-            {passwordError ? (
-              <Text style={styles.errorText}>{passwordError}</Text>
-            ) : null}
 
             <View style={styles.rememberContainer}>
               <View style={styles.switchContainer}>
@@ -185,6 +159,7 @@ const styles = StyleSheet.create({
   },
   inputsContainer: {
     marginTop: Spacing.lg,
+    alignItems: "center",
   },
   rememberContainer: {
     width: "100%",
@@ -210,12 +185,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: Colors.light.text,
     textDecorationLine: "underline",
-  },
-  errorText: {
-    alignSelf: "flex-start",
-    marginTop: 4,
-    marginLeft: 4,
-    color: "#FF3B30",
-    fontSize: 12,
   },
 });

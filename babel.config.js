@@ -14,6 +14,7 @@ module.exports = function (api) {
             "@constants": "./src/core/constants",
             "@assets": "./src/core/assets",
             "@auth": "./src/modules/auth",
+            "@hooks": "./src/core/hooks"
           },
           extensions: [".ios.js", ".android.js", ".js", ".ts", ".tsx", ".json"],
         },

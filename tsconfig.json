@@ -11,8 +11,7 @@
       "@components/*": ["core/components/*"],
       "@constants/*": ["core/constants/*"],
       "@assets/*": ["core/assets/*"],
-      "@auth/*": ["modules/auth/*"],
-      "@hooks/*": ["core/hooks/*"]
+      "@auth/*": ["modules/auth/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"]
